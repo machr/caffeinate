@@ -1,0 +1,13 @@
+<% @shops.each do |shop| %>
+  <a href="shops/<%=shop.id %>">
+    <div class="row shop__item">
+      <div class="five columns">
+        <img class="shop__logo" src="<%= shop.logo_url %>" alt="">
+      </div>
+      <div class="seven columns shop__information">
+        <h2 class="shop__name"><%= shop.name %></h2>
+        <p class="shop__address"><%=" #{shop.address}, #{shop.postcode} #{shop.city}" %></p>
+      </div>
+    </div>
+  </a>
+<% end %>

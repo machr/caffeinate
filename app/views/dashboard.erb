@@ -1,0 +1,23 @@
+<h1>Welcome back, <span class="dashboard__current-user"> <%= current_user.firstname %></span> </h1>
+<h2>Add new cafe</h2>
+
+<form class="dashboard__add-cafe" action="/dashboard/add" method="post">
+  <input type="text" name="name" value="" placeholder="Cafe Name">
+  <input type="text" name="address1" value="" placeholder="Address Line 1">
+  <input type="text" name="address2" value="" placeholder="Address Line 2">
+  <input type="text" name="city" value="" placeholder="City">
+  <!-- <input type="text" name="state" value="" placeholder="State"> -->
+  <select class="" name="state">
+    <option value="VIC">Victoria</option>
+    <option value="QLD">Queensland</option>
+    <option value="ACT">Australian Capital Territory</option>
+    <option value="NSW">New South Wales</option>
+    <option value="SA">South Australia</option>
+    <option value="WA">Wester Australia</option>
+    <option value="TAS">Tasmania</option>
+    <option value="NT">Northern Territory</option>
+  </select>
+  <input type="text" name="postcode" value="" placeholder="Postcode">
+  <input type="text" name="logo_url" value="" placeholder="Link to Logo">
+  <input type="submit" name="" value="add">
+</form>

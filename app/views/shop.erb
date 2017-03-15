@@ -1,0 +1,31 @@
+<h1><%= @shop.name %></h1>
+<p><%=" #{@shop.address}, #{@shop.postcode} #{@shop.city}, #{@shop.state}" %></p>
+<h3><%= @shop.description %></h1>
+
+<div id="map" class="">
+</div>
+
+
+
+<!-- If logged in, show form to update shop -->
+<% if logged_in? %>
+<h2>Edit This Cafe</h2>
+<form class="" action="/shop/<%= @shop.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="">Name</label>
+  <input type="text" name="name" value="<%= @shop.name %>">
+  <input type="submit" name="" value="Edit" >
+</form>
+
+
+<form class="" action="<%= @shop.id %>/delete" method="post">
+  <input type="submit" name="delete-shop" value="Delete This Shop :(">
+</form>
+
+<% end %>
+
+
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJkyjk-RH4LWm0aMMyFZhz-qtRmYK4GfM&callback=initMap">
+</script>
