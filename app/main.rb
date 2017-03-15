@@ -92,7 +92,9 @@ end
 #########################################
 
 get '/dashboard' do
+  @services = Service.all
   erb :dashboard
+
 end
 
 # Add Cafe from dashboard
@@ -104,6 +106,8 @@ post '/dashboard/add' do
   shop.state = params[:state]
   shop.postcode = params[:postcode]
   shop.logo_url = params[:logo_url]
+  shop.shop_owner_id = current_user.id
+
 
   shop.save
 
@@ -120,6 +124,7 @@ end
 
 # Edit / update
 put '/shops/:id' do
+  # binding.pry
   redirect '/' unless logged_in?
   shop = Shop.find(params[:id])
   shop.name = params[:name]
@@ -129,12 +134,15 @@ put '/shops/:id' do
   shop.postcode = params[:postcode]
   shop.logo_url = params[:logo_url]
 
+
+
   shop.save!
   redirect "/shops/#{ params[:id] }"
 end
 
 get '/shops/:id' do
   @shop = Shop.find(params[:id])
+  @services = Service.all
   erb :shop
 end
 

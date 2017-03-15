@@ -28,11 +28,18 @@
   </select>
   <input type="text" name="postcode" value="" placeholder="Postcode">
   <input type="text" name="logo_url" value="" placeholder="Link to Logo">
-  <input type="submit" name="" value="add">
-  </form>
 
   <!-- Display list of services -->
-  
+  <fieldset class="shop_services">
+    <h3>List of amenities</h3>
+    <% @services.each do |service| %>
+      <label><%= service.name %></label>
+      <input type="checkbox" name="services[<%= service.name %>]" value="<%= service.id %>">
+    <% end %>
+  </fieldset>
+
+  <input type="submit" name="" value="add">
+  </form>
 
 
 

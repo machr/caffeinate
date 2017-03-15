@@ -15,7 +15,7 @@
       <div class="row">
         <a class="nav__top-logo" href="/">CAFFEINATE</a>
         <% if logged_in? %>
-          <p class="user-name">Logged in as <%= current_user.email %></p>
+          <p class="user-name">Logged in as <%= current_user.firstname.capitalize %></p>
           <form class="user-logout" action="/session" method="post">
             <input type="hidden" name="_method" value="delete">
             <button name="button">Logout</button>
