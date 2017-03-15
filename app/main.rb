@@ -99,7 +99,7 @@ end
 post '/dashboard/add' do
   shop = Shop.new
   shop.name = params[:name]
-  shop.address = params[:address1]
+  shop.address = params[:address]
   shop.city = params[:city]
   shop.state = params[:state]
   shop.postcode = params[:postcode]
@@ -116,6 +116,21 @@ end
 
 get '/update' do
   erb :shop
+end
+
+# Edit / update
+put '/shops/:id' do
+  redirect '/' unless logged_in?
+  shop = Shop.find(params[:id])
+  shop.name = params[:name]
+  shop.address = params[:address]
+  shop.city = params[:city]
+  shop.state = params[:state]
+  shop.postcode = params[:postcode]
+  shop.logo_url = params[:logo_url]
+
+  shop.save!
+  redirect "/shops/#{ params[:id] }"
 end
 
 get '/shops/:id' do
