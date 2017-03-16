@@ -107,6 +107,7 @@ post '/dashboard/add' do
   shop.state = params[:state]
   shop.postcode = params[:postcode]
   shop.logo_url = params[:logo_url]
+  shop.link_url = params[:link_url]
   services = params[:services]
 
   # give ownership
