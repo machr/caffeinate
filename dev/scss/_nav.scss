@@ -6,7 +6,21 @@
 
   &-logo{
     float: left;
-    display: inline;
+    clear: both;
+    display: inline-block;
+    width: 50px;
+    .logo{
+      display: inline-block;
+      max-height: auto;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &-name{
+    display: inline-block;
   }
 
   &-right {
@@ -18,13 +32,16 @@
     display: inline;
   }
 
-  a {
-    color: black;
+  &-register {
+    color: $black;
     font-weight: 800;
     text-decoration: none;
     font-size: 1.25em;
+    &:hover {
+      color: lighten($black, 15%);
+      border-bottom: 2px solid lighten($black, 15%);
+    }
   }
-
   .user-name{
     display: inline;
     a {
@@ -33,16 +50,13 @@
   }
 }
 
-.logo{
-  display: inline-block;
-  max-height: auto;
-  width: 50px;
-
-  img{
-    width: 100%;
-    height: 100%;
+.user-login {
+  input {
+    background: none;
+    border: 2px solid;
   }
 }
+
 
 .user-logout {
   display: inline;

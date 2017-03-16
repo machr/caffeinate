@@ -643,29 +643,38 @@ button:hover {
   border-bottom: 3px solid #222222; }
   .nav__top-logo {
     float: left;
-    display: inline; }
+    clear: both;
+    display: inline-block;
+    width: 50px; }
+    .nav__top-logo .logo {
+      display: inline-block;
+      max-height: auto; }
+      .nav__top-logo .logo img {
+        width: 100%;
+        height: 100%; }
+  .nav__top-name {
+    display: inline-block; }
   .nav__top-right {
     display: inline-block;
     float: right; }
   .nav__top .user-login {
     display: inline; }
-  .nav__top a {
-    color: black;
+  .nav__top-register {
+    color: #222222;
     font-weight: 800;
     text-decoration: none;
     font-size: 1.25em; }
+    .nav__top-register:hover {
+      color: #484848;
+      border-bottom: 2px solid #484848; }
   .nav__top .user-name {
     display: inline; }
     .nav__top .user-name a {
       font-weight: 700; }
 
-.logo {
-  display: inline-block;
-  max-height: auto;
-  width: 50px; }
-  .logo img {
-    width: 100%;
-    height: 100%; }
+.user-login input {
+  background: none;
+  border: 2px solid; }
 
 .user-logout {
   display: inline;

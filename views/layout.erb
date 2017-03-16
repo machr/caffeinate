@@ -29,13 +29,15 @@
           </form>
         </div>
         <% else %>
-          <form class="user-login" action="/session" method="post">
-            <input type="text" name="email" value="">
-            <input type="password" name="password" value="">
-            <input type="submit" name="login" value="Log In">
-          </form>
-          <a href="/registration/create">Register</a>
-
+          <div class="nav__top-right">
+            <form class="user-login" action="/session" method="post">
+              <input type="text" name="email" value="" placeholder="Email">
+              <input type="password" name="password" value="" placeholder="Password">
+              <input type="submit" name="login" value="Log In">
+            </form>
+            |
+            <a class="nav__top-register" href="/registration/create">Register</a>
+          </div>
       <% end %>
       </div>
     </div>
