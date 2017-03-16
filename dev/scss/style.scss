@@ -1,20 +1,15 @@
 
 @import 'normalize';
 @import 'skeleton';
-@import 'config';  
+@import 'config';
 @import 'base';
 @import 'nav';
 @import 'index';
+@import 'dashboard';
 // @import 'mixins';
 
 // @import 'typography';
 @import 'shop';
-
-
-body {
-  font-family: 'Helvetica', sans-serif;
-}
-
 
 
 .map-bg{
@@ -23,12 +18,6 @@ body {
   background-repeat: no-repeat;
   height: 300px;
   width: auto;
-}
-
-.dashboard {
-  &__current-user{
-    font-weight: 800;
-  }
 }
 
 #map {

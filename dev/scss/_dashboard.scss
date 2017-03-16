@@ -1,0 +1,22 @@
+.dashboard {
+  padding: 2em 0;
+  &__current-user{
+    font-weight: 800;
+  }
+  &__add-cafe {
+    display: none;
+  }
+  &__btn {
+    padding: 7px 10px;
+    display: inline-block;
+    border: 3px solid $black;
+  }
+  &__shop-list {
+    border-top: 3px solid $black;
+    padding: 2em 0;
+  }
+}
+
+.show-form {
+  display: block;
+}

@@ -1,6 +1,6 @@
-# require 'pry'
+require 'pry'
 require 'sinatra'
-#require 'sinatra/reloader'
+require 'sinatra/reloader'
 require 'pg'
 require_relative 'database_config'
 require_relative 'models/shop'
@@ -73,14 +73,11 @@ end
 post '/session' do
   user = ShopOwner.find_by(email: params[:email])
   if user && user.authenticate(params[:password])
-    #check if there is a user with that email and checks password for that user
-    # you are okay, let me create a session for you
-    # Global variable that is a hash. creates a cookie. [:user_id] is made up
     session[:user_id] = user.id
     redirect '/dashboard'
   else
-    # Who are you even?!
-    erb :index # Until it correct, keep trying to login
+    @shops = Shop.all
+    erb :index
   end
 end
 
@@ -95,6 +92,8 @@ end
 get '/dashboard' do
   redirect '/' unless logged_in?
   @services = Service.all
+  @current_user = current_user
+
   erb :dashboard
 
 end
@@ -109,7 +108,6 @@ post '/dashboard/add' do
   shop.postcode = params[:postcode]
   shop.logo_url = params[:logo_url]
   services = params[:services]
-
 
   # give ownership
   shop.shop_owner_id = current_user.id
@@ -142,14 +140,13 @@ put '/shops/:id' do
   shop.state = params[:state]
   shop.postcode = params[:postcode]
   shop.logo_url = params[:logo_url]
-
   shop.save!
   redirect "/shops/#{ params[:id] }"
 end
 
 get '/shops/:id' do
   @shop = Shop.find(params[:id])
-  @services = Service.all
+  @services = @shop.services
   erb :shop
 end
 

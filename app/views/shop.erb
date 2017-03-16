@@ -1,10 +1,9 @@
 <h1><%= @shop.name %></h1>
 <p><%=" #{@shop.address}, #{@shop.postcode} #{@shop.city}, #{@shop.state}" %></p>
-<%  @shop.services.each do |service| %>
-  <%= service.name %>
-<% end %>
-
 <h3><%= @shop.description %></h1>
+
+
+
 <div id="map" class="">
 </div>
 

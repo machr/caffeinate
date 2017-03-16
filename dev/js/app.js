@@ -11,3 +11,12 @@ function initMap() {
     map: map
   });
 }
+
+var createShopForm = document.querySelector('.dashboard__add-cafe');
+var addShopBtn = document.querySelector('.add-cafe-btn');
+
+addShopBtn.addEventListener('click', function(e){
+  e.preventDefault();
+  console.log('Clicked');
+  createShopForm.classList.toggle('show-form');
+});

@@ -18,9 +18,9 @@ var gifsicle = require('imagemin-gifsicle');
 var optipng = require('imagemin-optipng');
 
 //Directories
-var sassInput = './app/dev/scss/*.scss';
-var jsInput = './app/dev/js/*.js';
-var dist = './app/public/';
+var sassInput = './dev/scss/*.scss';
+var jsInput = './dev/js/*.js';
+var dist = './public/';
 
 //BrowserSync server
 gulp.task('browser-sync', ['sass','js', 'images'], function () {
@@ -60,19 +60,19 @@ gulp.task('js', function() {
 })
 
 gulp.task('images', function () {
-    return gulp.src('/app/dev/images/**')
+    return gulp.src('/dev/images/**')
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant(), jpegtran(), optipng(), gifsicle()]
         }))
-        .pipe(gulp.dest('/app/public/images'));
+        .pipe(gulp.dest('./public/images'));
 });
 
 
 //Watch
 gulp.task('watch', function() {
-  gulp.watch( './app/**/+(erb|rb', browserSync.reload )
+  gulp.watch( '**/+(erb|rb', browserSync.reload )
   gulp.watch( sassInput,['sass'] )
   gulp.watch( jsInput,['js'] )
   gulp.on('change', function( event ) {

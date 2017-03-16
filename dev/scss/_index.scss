@@ -1,7 +1,20 @@
-.shop {
-  &__container{
+.frontpage {
+  &__shop {
     padding: 2em 0;
     min-height: 200px;
     border-bottom: 4px solid black;
+    &-address {
+      font-size: 0.5em;
+    }
+  }
+
+
+  &__service-item {
+    display: inline-block;
+    background-color: darken($brown, 65%);
+    color: lighten($brown, 15%);
+    padding: 5px 10px;
+    border-radius: 25px;
+    font-size: 0.75em;
   }
 }

@@ -1,8 +1,16 @@
-<header class="row">
-  <% @shops.each do |shop| %>
-      <%= shop.name %>
-      <%= shop.address %>
-      <%= shop.services %>
-    </section>
-  <% end %>
-</header>
+
+<% @shops.each do |shop| %>
+  <section class="row shop__container">
+    <div class="eight columns frontpage__shop">
+      <h2><%= shop.name %> <span class="frontpage__shop-address"><%= shop.address %></span></h2>
+
+      <% shop.services.each do |service| %>
+       <span class="frontpage__service-item"> <%= service.name %> </span>
+      <% end %>
+      <p><%= shop.description %></p>
+    </div>
+    <div class="four columns">
+      logo
+    </div>
+  </section>
+<% end %>
