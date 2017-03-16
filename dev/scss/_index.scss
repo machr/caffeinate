@@ -1,13 +1,25 @@
+header {
+  padding: 2em 0;
+  text-align: center;
+}
+
+.shop__container {
+  border-top: 4px solid black;
+}
+
 .frontpage {
   &__shop {
     padding: 2em 0;
     min-height: 200px;
-    border-bottom: 4px solid black;
     &-address {
       font-size: 0.5em;
     }
-  }
 
+    &-description{
+     padding: 2em 0;
+    }
+
+  }
 
   &__service-item {
     display: inline-block;
@@ -17,4 +29,15 @@
     border-radius: 25px;
     font-size: 0.75em;
   }
+}
+.shop-link{
+  color: $black;
+}
+
+.shop-link:hover {
+  color: lighten($black,30%);
+}
+
+button.logout-btn {
+  margin-left: 2em;
 }

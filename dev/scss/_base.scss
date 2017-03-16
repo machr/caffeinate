@@ -12,3 +12,12 @@ img {
 input, button {
   margin: 0;
 }
+
+button {
+  border: 3px solid $black;
+  color: $black;
+}
+
+button:hover {
+  border: 3px solid lighten($black, 15%);
+}

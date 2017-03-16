@@ -1,16 +1,20 @@
-
+<header>
+  <h1 class="section-headline">Current List of Shops</h1>
+</header>
 <% @shops.each do |shop| %>
+  <a class="shop-link" href="/shops/<%= shop.id %> ">
   <section class="row shop__container">
-    <div class="eight columns frontpage__shop">
-      <h2><%= shop.name %> <span class="frontpage__shop-address"><%= shop.address %></span></h2>
+    <div class="nine columns frontpage__shop">
+      <h2><%= shop.name %> <span class="frontpage__shop-address"><%= "#{shop.address}, #{shop.postcode}, #{shop.city} " %></span></h2>
 
       <% shop.services.each do |service| %>
        <span class="frontpage__service-item"> <%= service.name %> </span>
       <% end %>
-      <p><%= shop.description %></p>
+      <p class="frontpage__shop-description"><%= shop.description %></p>
     </div>
-    <div class="four columns">
+    <div class="three columns">
       logo
     </div>
   </section>
+  </a>
 <% end %>

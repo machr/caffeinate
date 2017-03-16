@@ -1,5 +1,5 @@
 <section class="dashboard">
-  <h2>Hello <%= current_user.firstname.capitalize %></h2>
+  <h2>Hello, <%= current_user.firstname.capitalize %></h2>
   <p>What would you like to do today?</p>
   <p class="dashboard__btn add-cafe-btn" href="#">Add New Cafe</p>
 
@@ -39,17 +39,18 @@
       <input type="submit" name="" value="add new cafe">
     </form>
   </section>
+
+  <!-- Show current user's shops -->
   <section class="dashboard__shop-list">
     <h2>My Shops</h2>
     <div class="row">
-      <!-- Show current user's shops -->
       <% current_user.shops.each do |shop|  %>
-        <a href="/shops/<%= shop.id %>">
-          <div class="">
-            <%= shop.name %>
+          <div class="dashboard__shop-item">
+            <h3 class="dashboard__shop-name"> <%= shop.name %> </h3>
           </div>
         </a>
       <% end %>
     </div>
   </section>
+
 </section>

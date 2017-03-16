@@ -630,6 +630,13 @@ img {
 input, button {
   margin: 0; }
 
+button {
+  border: 3px solid #222222;
+  color: #222222; }
+
+button:hover {
+  border: 3px solid #484848; }
+
 .nav__top {
   display: block;
   padding: 0.75em 0;
@@ -648,19 +655,36 @@ input, button {
     text-decoration: none;
     font-size: 1.25em; }
   .nav__top .user-name {
-    color: white;
     display: inline; }
+    .nav__top .user-name a {
+      font-weight: 700; }
+
+.logo {
+  display: inline-block;
+  max-height: auto;
+  width: 50px; }
+  .logo img {
+    width: 100%;
+    height: 100%; }
 
 .user-logout {
   display: inline;
   max-width: 10em; }
 
+header {
+  padding: 2em 0;
+  text-align: center; }
+
+.shop__container {
+  border-top: 4px solid black; }
+
 .frontpage__shop {
   padding: 2em 0;
-  min-height: 200px;
-  border-bottom: 4px solid black; }
+  min-height: 200px; }
   .frontpage__shop-address {
     font-size: 0.5em; }
+  .frontpage__shop-description {
+    padding: 2em 0; }
 
 .frontpage__service-item {
   display: inline-block;
@@ -670,6 +694,15 @@ input, button {
   -webkit-border-radius: 25px;
           border-radius: 25px;
   font-size: 0.75em; }
+
+.shop-link {
+  color: #222222; }
+
+.shop-link:hover {
+  color: #6f6f6f; }
+
+button.logout-btn {
+  margin-left: 2em; }
 
 .dashboard {
   padding: 2em 0; }
@@ -681,15 +714,22 @@ input, button {
     padding: 7px 10px;
     display: inline-block;
     border: 3px solid #222222; }
+    .dashboard__btn::hover {
+      border-color: #2a2a2a; }
   .dashboard__shop-list {
     border-top: 3px solid #222222;
     padding: 2em 0; }
+  .dashboard__shop-item {
+    border-top: 2px solid #222222;
+    padding: 1.5em 0; }
 
 .show-form {
   display: block; }
 
-.shop__item {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.4); }
+.shop {
+  padding: 2em 0; }
+  .shop__item {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.4); }
 
 .button-red {
   background-color: red; }

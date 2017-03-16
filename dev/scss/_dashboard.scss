@@ -10,10 +10,19 @@
     padding: 7px 10px;
     display: inline-block;
     border: 3px solid $black;
+    &::hover{
+      border-color: lighten($black, 3%);
+    }
   }
-  &__shop-list {
-    border-top: 3px solid $black;
-    padding: 2em 0;
+  &__shop{
+    &-list {
+      border-top: 3px solid $black;
+      padding: 2em 0;
+    }
+    &-item{
+      border-top: 2px solid $black;
+      padding: 1.5em 0;
+    }
   }
 }
 

@@ -15,7 +15,9 @@
   <nav class="nav__top">
     <div class="container">
       <div class="row">
-        <a class="nav__top-logo" href="/">CAFFEINATE</a>
+        <div class="logo">
+          <a class="nav__top-logo" href="/"><img src="/images/logo.png" alt="Caffeinate Logo"></a>
+        </div>
         <% if logged_in? %>
         <div class="nav__top-right">
           <p class="user-name">Logged in as
@@ -23,7 +25,7 @@
           </p>
           <form class="user-logout" action="/session" method="post">
             <input type="hidden" name="_method" value="delete">
-            <button name="button">Logout</button>
+            <button class="logout-btn" name="button">Logout</button>
           </form>
         </div>
         <% else %>
@@ -42,6 +44,7 @@
 
 
   <%= yield %>
+
   </section>
 
   <script src="/javascript/scripts.js" charset="utf-8"></script>

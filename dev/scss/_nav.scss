@@ -26,8 +26,21 @@
   }
 
   .user-name{
-    color: white;
     display: inline;
+    a {
+      font-weight: 700;
+    }
+  }
+}
+
+.logo{
+  display: inline-block;
+  max-height: auto;
+  width: 50px;
+
+  img{
+    width: 100%;
+    height: 100%;
   }
 }
 
