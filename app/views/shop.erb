@@ -5,10 +5,8 @@
 <div id="map" class="">
 </div>
 
-
-
 <!-- If logged in, show form to update shop -->
-<% if logged_in? %>
+<% if current_user = @shop.shop_owner_id %>
 <h2>Edit This Cafe</h2>
 <form class="" action="/shops/<%= @shop.id %>" method="post">
   <input type="hidden" name="_method" value="put">
@@ -38,10 +36,8 @@
     <% end %>
   </fieldset>
 
-  <input type="submit" name="" value="add">
+  <input type="submit" name="" value="Update Information">
   </form>
-
-
 
 <form class="" action="<%= @shop.id %>/delete" method="post">
   <input type="submit" name="delete-shop" value="Delete This Shop :(">

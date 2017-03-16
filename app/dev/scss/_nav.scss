@@ -1,0 +1,36 @@
+.nav__top {
+  display: block;
+  padding: 0.75em 0;
+  background-color: rgba(27,229,246, 0.6);
+
+  &-logo{
+    float: left;
+    display: inline;
+  }
+
+  &-right {
+    display: inline-block;
+    float: right;
+  }
+
+  .user-login {
+    display: inline;
+  }
+
+  a {
+    color: black;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+
+  .user-name{
+    color: white;
+    display: inline;
+  }
+}
+
+.user-logout {
+  display: inline;
+  max-width: 10em;
+}

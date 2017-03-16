@@ -30,6 +30,7 @@ end
 
 
 get '/' do
+  @shops = Shop.all
   erb :index
 end
 
@@ -92,6 +93,7 @@ end
 #########################################
 
 get '/dashboard' do
+  redirect '/' unless logged_in?
   @services = Service.all
   erb :dashboard
 
@@ -106,14 +108,22 @@ post '/dashboard/add' do
   shop.state = params[:state]
   shop.postcode = params[:postcode]
   shop.logo_url = params[:logo_url]
+  services = params[:services]
+
+
+  # give ownership
   shop.shop_owner_id = current_user.id
 
+  # add amenities to shop
+  services.each do |service_name, service_id|
+    shop.shop_services.build(service_id: service_id)
+  end
 
   shop.save
 
   if shop.save #WOHOO
     redirect to '/shops'
-  else #oooww
+  else #Aww
     erb :dashboard
   end
 end
@@ -134,8 +144,6 @@ put '/shops/:id' do
   shop.postcode = params[:postcode]
   shop.logo_url = params[:logo_url]
 
-
-
   shop.save!
   redirect "/shops/#{ params[:id] }"
 end
@@ -148,6 +156,7 @@ end
 
 # Delete Cafe from dashboard
 post '/shops/:id/delete' do
+  redirect '/' unless Shop.shop_owner_id = current_user
   dish = Shop.find(params[:id])
   dish.destroy
   redirect '/shops'

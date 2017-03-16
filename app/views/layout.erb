@@ -10,22 +10,27 @@
   <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
 </head>
 <body>
-  <nav class="nav-top">
+  <nav class="nav__top">
     <div class="container">
       <div class="row">
         <a class="nav__top-logo" href="/">CAFFEINATE</a>
         <% if logged_in? %>
-          <p class="user-name">Logged in as <%= current_user.firstname.capitalize %></p>
+        <div class="nav__top-right">
+          <p class="user-name">Logged in as
+            <a href="/dashboard"><%= current_user.firstname.capitalize %></a>
+          </p>
           <form class="user-logout" action="/session" method="post">
             <input type="hidden" name="_method" value="delete">
             <button name="button">Logout</button>
           </form>
+        </div>
         <% else %>
           <form class="user-login" action="/session" method="post">
             <input type="text" name="email" value="">
             <input type="password" name="password" value="">
             <input type="submit" name="login" value="Log In">
           </form>
+          <a href="/registration/create">Register</a>
 
       <% end %>
       </div>

@@ -625,6 +625,31 @@ img {
 input, button {
   margin: 0; }
 
+.nav__top {
+  display: block;
+  padding: 0.75em 0;
+  background-color: rgba(27, 229, 246, 0.6); }
+  .nav__top-logo {
+    float: left;
+    display: inline; }
+  .nav__top-right {
+    display: inline-block;
+    float: right; }
+  .nav__top .user-login {
+    display: inline; }
+  .nav__top a {
+    color: black;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 1.25em; }
+  .nav__top .user-name {
+    color: white;
+    display: inline; }
+
+.user-logout {
+  display: inline;
+  max-width: 10em; }
+
 .shop__item {
   border-bottom: 2px solid rgba(0, 0, 0, 0.4); }
 
@@ -633,25 +658,6 @@ input, button {
 
 body {
   font-family: 'Helvetica', sans-serif; }
-
-.nav-top {
-  display: block;
-  padding: 0.75em 0;
-  background-color: rgba(27, 229, 246, 0.6); }
-  .nav-top .user-login {
-    display: inline; }
-  .nav-top a {
-    color: black;
-    font-weight: 800;
-    text-decoration: none;
-    font-size: 1.25em; }
-  .nav-top .user-name {
-    color: white;
-    display: inline; }
-
-.user-logout {
-  display: inline;
-  max-width: 10em; }
 
 .map-bg {
   background-image: url("https://halopets.com/wp-content/uploads/2015/03/map-placeholder.png");
