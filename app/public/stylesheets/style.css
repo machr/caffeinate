@@ -618,6 +618,10 @@ there.
 /* Larger than tablet */
 /* Larger than desktop */
 /* Larger than Desktop HD */
+body {
+  background: #EAC29A;
+  color: #222222; }
+
 img {
   width: 100%;
   height: auto; }
@@ -628,7 +632,7 @@ input, button {
 .nav__top {
   display: block;
   padding: 0.75em 0;
-  background-color: rgba(27, 229, 246, 0.6); }
+  border-bottom: 3px solid #222222; }
   .nav__top-logo {
     float: left;
     display: inline; }
@@ -649,6 +653,11 @@ input, button {
 .user-logout {
   display: inline;
   max-width: 10em; }
+
+.shop__container {
+  padding: 2em 0;
+  min-height: 200px;
+  border-bottom: 4px solid black; }
 
 .shop__item {
   border-bottom: 2px solid rgba(0, 0, 0, 0.4); }

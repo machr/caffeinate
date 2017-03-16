@@ -1,6 +1,6 @@
 require 'pry'
 require 'sinatra'
-require 'sinatra/reloader'
+#require 'sinatra/reloader'
 require 'pg'
 require_relative 'database_config'
 require_relative 'models/shop'
@@ -118,7 +118,6 @@ post '/dashboard/add' do
   services.each do |service_name, service_id|
     shop.shop_services.build(service_id: service_id)
   end
-
   shop.save
 
   if shop.save #WOHOO
