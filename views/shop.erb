@@ -12,63 +12,65 @@
   </div>
 
   <!-- If logged in, show form to update shop -->
-  <% if current_user = @shop.shop_owner_id %>
-  <h2>Edit This Cafe</h2>
-  <form class="" action="/shops/<%= @shop.id %>" method="post">
-    <input type="hidden" name="_method" value="put">
-    <div class="row">
-      <div class="four columns">
-        <label for="name">Cafe Name</label>
-        <input class="u-full-width" type="text" name="name" value="">
+  <% if logged_in? && current_user = @shop.shop_owner_id %>
+    <h2>Edit This Cafe</h2>
+    <form class="" action="/shops/<%= @shop.id %>" method="post">
+      <input type="hidden" name="_method" value="put">
+      <div class="row">
+        <div class="four columns">
+          <label for="name">Cafe Name</label>
+          <input class="u-full-width" type="text" name="name" value="">
+        </div>
+        <div class="four columns">
+          <label for="name">Address</label>
+          <input class="u-full-width" type="text" name="address" value="">
+        </div>
+        <div class="four columns">
+          <label for="name">City</label>
+          <input class="u-full-width" type="text" name="city" value="">
+        </div>
+      <!-- <input class="u-full-width" type="text" name="state" value="" placeholder="State"> -->
+      <div class="row">
+        <div class="four columns">
+          <label for="name">State/Territory</label>
+          <select class="u-full-width" name="state">
+            <option value="VIC">Victoria</option>
+            <option value="QLD">Queensland</option>
+            <option value="ACT">Australian Capital Territory</option>
+            <option value="NSW">New South Wales</option>
+            <option value="SA">South Australia</option>
+            <option value="WA">Wester Australia</option>
+            <option value="TAS">Tasmania</option>
+            <option value="NT">Northern Territory</option>
+          </select>
+        </div>
+        <div class="four columns">
+          <label for="name">Postcode</label>
+          <input class="u-full-width" type="text" name="postcode" value="">
+        </div>
+        <div class="four columns">
+          <label for="name">Link to Logo</label>
+          <input class="u-full-width" type="text" name="logo_url" value="">
+        </div>
       </div>
-      <div class="four columns">
-        <label for="name">Address</label>
-        <input class="u-full-width" type="text" name="address" value="">
-      </div>
-      <div class="four columns">
-        <label for="name">City</label>
-        <input class="u-full-width" type="text" name="city" value="">
-      </div>
-    <!-- <input class="u-full-width" type="text" name="state" value="" placeholder="State"> -->
-    <div class="row">
-      <div class="four columns">
-        <label for="name">State/Territory</label>
-        <select class="u-full-width" name="state">
-          <option value="VIC">Victoria</option>
-          <option value="QLD">Queensland</option>
-          <option value="ACT">Australian Capital Territory</option>
-          <option value="NSW">New South Wales</option>
-          <option value="SA">South Australia</option>
-          <option value="WA">Wester Australia</option>
-          <option value="TAS">Tasmania</option>
-          <option value="NT">Northern Territory</option>
-        </select>
-      </div>
-      <div class="four columns">
-        <label for="name">Postcode</label>
-        <input class="u-full-width" type="text" name="postcode" value="">
-      </div>
-      <div class="four columns">
-        <label for="name">Link to Logo</label>
-        <input class="u-full-width" type="text" name="logo_url" value="">
-      </div>
-    </div>
 
-    <!-- Display list of services -->
-    <fieldset class="shop_services">
-      <h3>List of amenities</h3>
-      <% @services.each do |service| %>
-        <label><%= service.name %></label>
-        <input type="checkbox" name="services[<%= service.name %>]" value="<%= service.id %>">
-      <% end %>
-    </fieldset>
+      <!-- Display list of services -->
+      <fieldset class="shop_services">
+        <h3>List of amenities</h3>
+        <% @services.each do |service| %>
+          <label><%= service.name %></label>
+          <input type="checkbox" name="services[<%= service.name %>]" value="<%= service.id %>">
+        <% end %>
+      </fieldset>
 
-    <input type="submit" name="" value="Update Information">
-    </form>
+      <input type="submit" name="" value="Update Information">
+      </form>
 
-    <form class="" action="<%= @shop.id %>/delete" method="post">
-      <input type="submit" name="delete-shop" value="Delete This Shop :(">
-    </form>
+      <form class="" action="<%= @shop.id %>/delete" method="post">
+        <input type="submit" name="delete-shop" value="Delete This Shop :(">
+      </form>
+  <% else %>
+
 
   <% end %>
 

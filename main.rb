@@ -47,6 +47,7 @@ get '/registration/create' do
   erb :signup
 end
 
+# Information from submitted form on /registration/
 post '/registration' do
   shop_owner = ShopOwner.new
   shop_owner.firstname = params[:firstname]
@@ -132,7 +133,6 @@ end
 
 # Edit / update
 put '/shops/:id' do
-  # binding.pry
   redirect '/' unless logged_in?
   shop = Shop.find(params[:id])
   shop.name = params[:name]
@@ -162,9 +162,6 @@ end
 
 # Edit Cafe from dashboard
 get '/shops/:id/edit' do
-  # return params.to_json
   @shop = Shop.find(params[:id])
   erb :shop
 end
-
-# binding.pry
