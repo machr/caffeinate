@@ -13,34 +13,25 @@ I wanted to run my idea by my instructors before choosing the final concept, so 
 
 After talking to instructors about my favourite idea and getting positive feedback, I started making a Entity Relations diagram to figure out how the database tables would be connected to each other. My original idea included Shops, Users, Shop Owners, Services and a few more, but I made my scope smaller and prioritized basic CRUD functionality.
 
+### Output ###
+Shop owners are able to register and account and add as many shops as they want. The shops can only be updated and deleted by the account that created them. Every new shop will be displayed on the index page with name, address, logo, description and link to website.
+
+![ER](README_images/ER.jpeg)]
+
+### What I learned from this project ###
+
+This time, I decided to spent more time in the planning face before jumping straight into coding, in the hope that I would have to spend less time re-writing code. It seemed to work, despite my urge to jump straight to developing the front-end like I usually do.
+
+After the planning phase, I started developing the functionality and connecting to the server.
+
+I decided to use a CSS framework called [Skeleton](https://getskeleton.com/) and keep the design very minimal.
 [![Caffeinate](README_images/screenshot.png)](https://dry-falls-58899.herokuapp.com/)
 
-### What I need to work on personally ###
 
-I need to learn to structure my JavaScript code better and make it easier to read. I've had to re-read my code a few times after leaving it for a few hours.
+## TO-DO List ##
 
-I also need to learn to break down problems in atomic parts to really gain a full understanding in what's happening in the compiler. Often I focus on getting it to work as fast as possible, instead of trying to understand my code on a basic level and focus on getting it to work as fast as possible.
+- Add functionality for users to sign up, comment, rate and save favourite shops.
 
+- Add search functionality based on location, services, group size.
 
-
-
-**Bugs and Unsolved Issues**
-
-- Game does not consider 'Draw' scenarios.
-
-- Games does not reset on win.
-
-- Game is using a lot of fixed dimensions and is not responsive at all.
-
-  ​
-
-
-**TO-DO List**
-
-- Re-read complicated code sections, i.e Regex expressions in functions
-- Redesign X & O symbols
-- Keep score of winning
-- Add input fields to get player names
-- Show player turn (could be a toggleClass based on turnCounter)
-- Give players avatar options
-- Fix bugs and refactor code
+- Add more styling and content
