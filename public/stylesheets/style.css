@@ -670,11 +670,16 @@ button:hover {
   .nav__top .user-name {
     display: inline; }
     .nav__top .user-name a {
-      font-weight: 700; }
+      font-weight: 700;
+      color: #222222; }
+      .nav__top .user-name a:hover {
+        color: #7b7b7b; }
 
 .user-login input {
   background: none;
   border: 2px solid; }
+  .user-login input:focus {
+    border: 2px solid #7b7b7b; }
 
 .user-logout {
   display: inline;
@@ -693,7 +698,30 @@ header {
   .frontpage__shop-address {
     font-size: 0.5em; }
   .frontpage__shop-description {
-    padding: 2em 0; }
+    padding: 2em 0;
+    font-size: 1.25em;
+    line-height: 1.25; }
+  .frontpage__shop-link {
+    color: #222222;
+    font-weight: 600;
+    font-size: 1.5em; }
+    .frontpage__shop-link:hover {
+      color: #7b7b7b; }
+
+.frontpage__logo {
+  padding: 1em 0;
+  min-height: 200px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .frontpage__logo img {
+    width: 100%;
+    height: auto; }
 
 .frontpage__service-item {
   display: inline-block;
@@ -705,7 +733,8 @@ header {
   font-size: 0.75em; }
 
 .shop-link {
-  color: #222222; }
+  color: #222222;
+  text-decoration: none; }
 
 .shop-link:hover {
   color: #6f6f6f; }

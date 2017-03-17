@@ -120,7 +120,7 @@ post '/dashboard/add' do
   shop.save
 
   if shop.save #WOHOO
-    redirect to '/shops'
+    redirect to '/'
   else #Aww
     erb :dashboard
   end
@@ -141,6 +141,7 @@ put '/shops/:id' do
   shop.state = params[:state]
   shop.postcode = params[:postcode]
   shop.logo_url = params[:logo_url]
+  shop.link_url = params[:link_url]
   shop.save!
   redirect "/shops/#{ params[:id] }"
 end
